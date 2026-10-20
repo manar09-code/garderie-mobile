@@ -18,6 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    // Le timer est annulé dans dispose pour éviter une navigation tardive.
     _navigationTimer = Timer(const Duration(seconds: 3), () {
       if (!mounted) return;
       Navigator.of(context).pushReplacement(
@@ -88,6 +89,7 @@ class _DaycareIllustrationPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+    // Toutes les formes utilisent une base 300 x 250, adaptée à la taille réelle.
     final scaleX = size.width / 300;
     final scaleY = size.height / 250;
     canvas.save();

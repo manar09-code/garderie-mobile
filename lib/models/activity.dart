@@ -12,6 +12,7 @@ class Activity {
   final String icone;
 }
 
+// Données de démonstration locales, sans backend ni base de données.
 const daycareActivities = [
   Activity(
     id: 1,
