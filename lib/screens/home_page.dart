@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../models/activity.dart';
 import '../widgets/activity_list.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,6 +18,16 @@ class _HomePageState extends State<HomePage> {
     (label: 'Activités', icon: Icons.palette_rounded),
     (label: 'À propos', icon: Icons.info_outline_rounded),
   ];
+
+  void _showActivityMessage(Activity activity) {
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(activity.titre)));
+  }
+
+  void _showNewActivityMessage() {
+    ScaffoldMessenger.of(context)
+        .showSnackBar(const SnackBar(content: Text('Nouvelle activité')));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,10 +92,10 @@ class _HomePageState extends State<HomePage> {
       ),
       body: IndexedStack(
         index: _selectedIndex,
-        children: const [
-          _HomeContent(),
-          _ActivitiesContent(),
-          _SectionPlaceholder(
+        children: [
+          _HomeContent(onActivityTap: _showActivityMessage),
+          _ActivitiesContent(onActivityTap: _showActivityMessage),
+          const _SectionPlaceholder(
             title: 'À propos',
             description: 'Une garderie pensée pour le bien-être des enfants.',
             icon: Icons.favorite_rounded,
@@ -92,7 +103,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: _showNewActivityMessage,
         tooltip: 'Nouvelle activité',
         child: const Icon(Icons.add),
       ),
@@ -101,7 +112,9 @@ class _HomePageState extends State<HomePage> {
 }
 
 class _HomeContent extends StatelessWidget {
-  const _HomeContent();
+  const _HomeContent({required this.onActivityTap});
+
+  final ValueChanged<Activity> onActivityTap;
 
   @override
   Widget build(BuildContext context) {
@@ -159,9 +172,10 @@ class _HomeContent extends StatelessWidget {
             ),
           ),
         ),
-        const ActivityList(
+        ActivityList(
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
+          onActivityTap: onActivityTap,
         ),
       ],
     );
@@ -169,11 +183,13 @@ class _HomeContent extends StatelessWidget {
 }
 
 class _ActivitiesContent extends StatelessWidget {
-  const _ActivitiesContent();
+  const _ActivitiesContent({required this.onActivityTap});
+
+  final ValueChanged<Activity> onActivityTap;
 
   @override
   Widget build(BuildContext context) {
-    return const ActivityList();
+    return ActivityList(onActivityTap: onActivityTap);
   }
 }
 
