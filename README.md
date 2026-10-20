@@ -60,16 +60,15 @@ indiqués. Consultez [screenshots/README.md](screenshots/README.md) pour les
 
 ### Écran de démarrage
 
-![Écran de démarrage](screenshots/splash-screen.png)
+![Écran de démarrage](screenshots\Splash Screen.png)
 
 ### Page principale avec les activités
 
-![Page principale](screenshots/home-page.png)
-
+![Page principale](screenshots\Page principale avec la liste des activités.png)
 ### Menu latéral ouvert
 
-![Menu latéral](screenshots/drawer.png)
+![Menu latéral](screenshots\Drawer ouvert.png)
 
 ### Message après une interaction
 
-![Message d'interaction](screenshots/interaction-message.png)
+![Message d'interaction](screenshots\Message affiché après une interaction.png)
