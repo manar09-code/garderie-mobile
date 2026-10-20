@@ -11,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // Le Drawer et l'IndexedStack utilisent le même index de section.
   int _selectedIndex = 0;
 
   static const _destinations = [
