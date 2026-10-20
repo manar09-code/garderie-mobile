@@ -17,7 +17,12 @@ void main() {
       await tester.pump(const Duration(seconds: 3));
       await tester.pumpAndSettle();
 
-      expect(find.text('Bienvenue à Ma Garderie'), findsOneWidget);
+      expect(find.text('Bienvenue à Ma Garderie !'), findsOneWidget);
+      expect(find.text('Dessin et coloriage'), findsOneWidget);
+      expect(find.text('Jeux éducatifs'), findsOneWidget);
+      expect(find.text('Musique et chansons'), findsOneWidget);
+      expect(find.text('Lecture de contes'), findsOneWidget);
+      expect(find.text('Activités sportives'), findsOneWidget);
     },
   );
 }

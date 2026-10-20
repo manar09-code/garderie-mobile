@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/activity_list.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -80,16 +82,8 @@ class _HomePageState extends State<HomePage> {
       body: IndexedStack(
         index: _selectedIndex,
         children: const [
-          _SectionPlaceholder(
-            title: 'Bienvenue à Ma Garderie !',
-            description: 'Un espace pour grandir, jouer et apprendre ensemble.',
-            icon: Icons.waving_hand_rounded,
-          ),
-          _SectionPlaceholder(
-            title: 'Les activités',
-            description: 'Les activités de la garderie apparaîtront ici.',
-            icon: Icons.toys_rounded,
-          ),
+          _HomeContent(),
+          _ActivitiesContent(),
           _SectionPlaceholder(
             title: 'À propos',
             description: 'Une garderie pensée pour le bien-être des enfants.',
@@ -103,6 +97,83 @@ class _HomePageState extends State<HomePage> {
         child: const Icon(Icons.add),
       ),
     );
+  }
+}
+
+class _HomeContent extends StatelessWidget {
+  const _HomeContent();
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: const EdgeInsets.only(top: 18),
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Container(
+            padding: const EdgeInsets.all(22),
+            decoration: BoxDecoration(
+              color: const Color(0xFFE5F3E9),
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: const Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Bienvenue à Ma Garderie !',
+                        style: TextStyle(
+                          color: Color(0xFF315C4C),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      Text(
+                        'Un espace pour grandir, jouer et apprendre ensemble.',
+                        style: TextStyle(color: Color(0xFF52685E), height: 1.4),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 12),
+                Icon(
+                  Icons.waving_hand_rounded,
+                  size: 38,
+                  color: Color(0xFF4E8973),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.fromLTRB(20, 24, 20, 4),
+          child: Text(
+            'Nos activités',
+            style: TextStyle(
+              color: Color(0xFF315C4C),
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
+        const ActivityList(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+        ),
+      ],
+    );
+  }
+}
+
+class _ActivitiesContent extends StatelessWidget {
+  const _ActivitiesContent();
+
+  @override
+  Widget build(BuildContext context) {
+    return const ActivityList();
   }
 }
 
