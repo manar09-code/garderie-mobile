@@ -54,21 +54,21 @@ flutter test
 
 ## Captures d'écran
 
-Les images ci-dessous sont à enregistrer dans `screenshots/` avec les noms
-indiqués. Consultez [screenshots/README.md](screenshots/README.md) pour les
-étapes de capture sur l'émulateur Android Studio.
+Les captures de l'application sur émulateur Android sont enregistrées ci-dessous.
+Pour réaliser d'autres captures, consultez [screenshots/README.md](screenshots/README.md).
 
 ### Écran de démarrage
 
-![Écran de démarrage](screenshots\Splash Screen.png)
+![Écran de démarrage](screenshots/Splash%20Screen.png)
 
 ### Page principale avec les activités
 
-![Page principale](screenshots\Page principale avec la liste des activités.png)
+![Page principale](screenshots/Page%20principale%20avec%20la%20liste%20des%20activit%C3%A9s.png)
+
 ### Menu latéral ouvert
 
-![Menu latéral](screenshots\Drawer ouvert.png)
+![Menu latéral](screenshots/Drawer%20ouvert.png)
 
 ### Message après une interaction
 
-![Message d'interaction](screenshots\Message affiché après une interaction.png)
+![Message d'interaction](screenshots/Message%20affich%C3%A9%20apr%C3%A8s%20une%20interaction.png)
