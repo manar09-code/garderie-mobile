@@ -1,17 +1,75 @@
-# garderie_mobile
+# Ma Garderie
 
-A new Flutter project.
+Ma Garderie est une application mobile Flutter qui présente les activités d'une
+garderie pour enfants. Elle propose un écran de démarrage, une page d'accueil,
+un menu de navigation et une liste d'activités avec des interactions simples.
 
-## Getting Started
+## Fonctionnalités
 
-This project is a starting point for a Flutter application.
+- Écran de démarrage illustré avec navigation automatique après 3 secondes.
+- Accueil avec une liste de cinq activités définies localement dans le code.
+- Menu latéral : Accueil, Activités et À propos.
+- Bouton « + » qui affiche le message « Nouvelle activité ».
+- Sélection d'une activité qui affiche son titre dans un SnackBar.
 
-A few resources to get you started if this is your first Flutter project:
+Les données sont statiques. L'application n'utilise ni backend, ni base de
+données, ni authentification.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Technologies
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter et Dart
+- Material Design 3
+- Git et GitHub
+
+## Prérequis
+
+- Flutter installé (Flutter 3 ou version ultérieure).
+- Android Studio avec un émulateur Android configuré, ou un appareil Android.
+
+## Installation et lancement
+
+```bash
+git clone https://github.com/manar09-code/garderie-mobile.git
+cd garderie-mobile
+flutter pub get
+flutter run
+```
+
+Pour choisir explicitement un émulateur connecté :
+
+```bash
+flutter devices
+flutter run -d <device_id>
+```
+
+Dans Android Studio, ouvrez le dossier du projet, sélectionnez un émulateur,
+puis lancez `lib/main.dart`.
+
+## Tests et analyse
+
+```bash
+flutter analyze
+flutter test
+```
+
+## Captures d'écran
+
+Les images ci-dessous sont à enregistrer dans `screenshots/` avec les noms
+indiqués. Consultez [screenshots/README.md](screenshots/README.md) pour les
+étapes de capture sur l'émulateur Android Studio.
+
+### Écran de démarrage
+
+![Écran de démarrage](screenshots/splash-screen.png)
+
+### Page principale avec les activités
+
+![Page principale](screenshots/home-page.png)
+
+### Menu latéral ouvert
+
+![Menu latéral](screenshots/drawer.png)
+
+### Message après une interaction
+
+![Message d'interaction](screenshots/interaction-message.png)
